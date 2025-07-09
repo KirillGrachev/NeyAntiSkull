@@ -54,7 +54,7 @@ public class SkullPlaceEvent implements Listener {
             return;
         }
 
-        if (!validationService.isSkullPlacementValid(event)) {
+        if (!validationService.isSkullPlacementValid(event, configManager)) {
 
             event.setCancelled(true);
 
