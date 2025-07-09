@@ -1,6 +1,8 @@
 package com.ney.anti_skull.service;
 
 import com.ney.anti_skull.registry.SkullRegistry;
+import org.bukkit.block.BlockState;
+import org.bukkit.block.Skull;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -24,6 +26,11 @@ public class SkullValidationService {
 
         ItemMeta itemMeta = itemStack.getItemMeta();
         if (!(itemMeta instanceof SkullMeta)) {
+            return true;
+        }
+
+        BlockState blockState = event.getBlock().getState();
+        if (!(blockState instanceof Skull)) {
             return true;
         }
 
