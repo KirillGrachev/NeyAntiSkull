@@ -6,7 +6,7 @@
 
     <groupId>com.ney</groupId>
     <artifactId>NeyAntiSkull</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2-STABLE</version>
     <packaging>jar</packaging>
 
     <name>NeyAntiSkull</name>
