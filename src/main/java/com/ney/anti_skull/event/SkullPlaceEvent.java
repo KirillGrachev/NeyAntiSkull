@@ -3,8 +3,6 @@ package com.ney.anti_skull.event;
 import com.ney.anti_skull.config.ConfigManager;
 import com.ney.anti_skull.service.SkullRemovalService;
 import com.ney.anti_skull.service.SkullValidationService;
-import org.bukkit.block.BlockState;
-import org.bukkit.block.Skull;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -36,11 +34,6 @@ public class SkullPlaceEvent implements Listener {
         EquipmentSlot hand = event.getHand();
 
         if (!configManager.isSkullBlockingEnabled()) {
-            return;
-        }
-
-        BlockState blockState = event.getBlock().getState();
-        if (!(blockState instanceof Skull)) {
             return;
         }
 
