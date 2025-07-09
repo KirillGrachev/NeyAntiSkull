@@ -9,8 +9,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class SkullPlaceEvent implements Listener {
@@ -31,10 +32,10 @@ public class SkullPlaceEvent implements Listener {
     public void onSkullPlace(@NotNull BlockPlaceEvent event) {
 
         Player player = event.getPlayer();
-        ItemStack itemInHand = player.getInventory().getItemInMainHand();
+        ItemStack itemStack = event.getItemInHand();
+        EquipmentSlot hand = event.getHand();
 
         if (!configManager.isSkullBlockingEnabled()) {
-            event.setCancelled(true);
             return;
         }
 
@@ -44,13 +45,19 @@ public class SkullPlaceEvent implements Listener {
         }
 
         if (!validationService.isSkullPlacementValid(event)) {
+
             event.setCancelled(true);
 
             if (configManager.areMessagesEnabled()) {
                 configManager.getBlockedMessage().forEach(player::sendMessage);
             }
 
-            removalService.removeSkull(itemInHand, player, configManager.shouldRemoveSkull());
+            removalService.removeSkull(
+                    itemStack, player, hand,
+                    configManager.shouldRemoveSkull(),
+                    configManager.getTakeAwayType()
+            );
+
         }
     }
 }

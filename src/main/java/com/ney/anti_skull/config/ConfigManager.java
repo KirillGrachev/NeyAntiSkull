@@ -36,12 +36,17 @@ public class ConfigManager implements AntiSkullConfig {
 
     @Override
     public boolean shouldRemoveSkull() {
-        return config.getBoolean("settings.take_away", false);
+        return config.getBoolean("settings.take_away.enabled", false);
     }
 
     @Override
     public boolean isListEnabled() {
         return config.getBoolean("settings.list.enabled", true);
+    }
+
+    @Override
+    public boolean areMessagesEnabled() {
+        return config.getBoolean("messages.on_place.enabled", true);
     }
 
     @Override
@@ -52,8 +57,8 @@ public class ConfigManager implements AntiSkullConfig {
     }
 
     @Override
-    public boolean areMessagesEnabled() {
-        return config.getBoolean("messages.on_place.enabled", true);
+    public String getTakeAwayType() {
+        return config.getString("settings.take_away.type", "HAND").toUpperCase();
     }
 
     @Override
