@@ -9,6 +9,10 @@ import java.io.File;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Менеджер конфигурации плагина.
+ * Реализует загрузку и парсинг настроек из config.yml.
+ */
 public class ConfigManager implements AntiSkullConfig {
 
     private final NeyAntiSkull plugin;

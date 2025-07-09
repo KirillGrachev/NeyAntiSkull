@@ -6,8 +6,18 @@ import org.jetbrains.annotations.NotNull;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Утилита для обработки HEX-цветов в строках.
+ * Конвертирует формат #RRGGBB в &x&R&R&G&G&B&B.
+ */
 public class HexColorUtil {
 
+    /**
+     * Преобразует HEX-коды в строке в Minecraft-формат.
+     *
+     * @param text исходная строка с HEX-кодами
+     * @return строка с преобразованными цветовыми кодами
+     */
     public static @NotNull String color(String text) {
 
         if (text == null || text.isEmpty()) {
@@ -47,6 +57,12 @@ public class HexColorUtil {
 
     }
 
+    /**
+     * Проверяет валидность HEX-кода.
+     *
+     * @param code строка с HEX-кодом (#RRGGBB)
+     * @return true если код валиден, false иначе
+     */
     private static boolean isValidHexCode(@NotNull String code) {
 
         for (int i = 1; i < code.length(); i++) {
