@@ -9,6 +9,8 @@ public interface AntiSkullConfig {
     boolean isListEnabled();
     boolean areMessagesEnabled();
 
+    String getTakeAwayType();
+
     List<String> getDisallowedSkulls();
     List<String> getBlockedMessage();
 
