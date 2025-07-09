@@ -17,6 +17,7 @@ settings:
       - "&aГолова игрока"
       - "Голова игрока"
       - "#42fffcГолова игрока"
+
 messages:
   on_place:
     enabled: true

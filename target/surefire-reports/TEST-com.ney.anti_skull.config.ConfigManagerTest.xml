@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ney.anti_skull.config.ConfigManagerTest" time="2.601" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ney.anti_skull.config.ConfigManagerTest" time="2.87" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="16"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Users\Ney\.gradle\jdks\jdk-16.0.2+7\bin"/>
-    <property name="sun.java.command" value="C:\Temp\surefire11932766923308040884\surefirebooter-20250709035619854_3.jar C:\Temp\surefire11932766923308040884 2025-07-09T03-56-19_416-jvmRun1 surefire-20250709035619854_1tmp surefire_0-20250709035619854_2tmp"/>
+    <property name="sun.java.command" value="C:\Temp\surefire9521156125272074353\surefirebooter-20250709041605688_3.jar C:\Temp\surefire9521156125272074353 2025-07-09T04-16-05_249-jvmRun1 surefire-20250709041605688_1tmp surefire_0-20250709041605688_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Ney\IdeaProjects\NeyAntiSkull\target\test-classes;C:\Users\Ney\IdeaProjects\NeyAntiSkull\target\classes;C:\Users\Ney\.m2\repository\org\junit\jupiter\junit-jupiter\5.13.3\junit-jupiter-5.13.3.jar;C:\Users\Ney\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.13.3\junit-jupiter-api-5.13.3.jar;C:\Users\Ney\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Ney\.m2\repository\org\junit\platform\junit-platform-commons\1.13.3\junit-platform-commons-1.13.3.jar;C:\Users\Ney\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Ney\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.13.3\junit-jupiter-params-5.13.3.jar;C:\Users\Ney\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.13.3\junit-jupiter-engine-5.13.3.jar;C:\Users\Ney\.m2\repository\org\junit\platform\junit-platform-engine\1.13.3\junit-platform-engine-1.13.3.jar;C:\Users\Ney\.m2\repository\org\mockito\mockito-core\5.18.0\mockito-core-5.18.0.jar;C:\Users\Ney\.m2\repository\net\bytebuddy\byte-buddy\1.17.5\byte-buddy-1.17.5.jar;C:\Users\Ney\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.5\byte-buddy-agent-1.17.5.jar;C:\Users\Ney\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Ney\.m2\repository\org\assertj\assertj-core\3.27.3\assertj-core-3.27.3.jar;C:\Users\Ney\.m2\repository\com\destroystokyo\paper\paper-api\1.16.5-R0.1-SNAPSHOT\paper-api-1.16.5-R0.1-SNAPSHOT.jar;C:\Users\Ney\.m2\repository\net\kyori\adventure-api\4.7.0\adventure-api-4.7.0.jar;C:\Users\Ney\.m2\repository\net\kyori\adventure-key\4.7.0\adventure-key-4.7.0.jar;C:\Users\Ney\.m2\repository\net\kyori\examination-api\1.1.0\examination-api-1.1.0.jar;C:\Users\Ney\.m2\repository\net\kyori\examination-string\1.1.0\examination-string-1.1.0.jar;C:\Users\Ney\.m2\repository\org\checkerframework\checker-qual\3.11.0\checker-qual-3.11.0.jar;C:\Users\Ney\.m2\repository\org\jetbrains\annotations\20.1.0\annotations-20.1.0.jar;C:\Users\Ney\.m2\repository\net\kyori\adventure-text-serializer-gson\4.7.0\adventure-text-serializer-gson-4.7.0.jar;C:\Users\Ney\.m2\repository\net\kyori\adventure-text-serializer-legacy\4.7.0\adventure-text-serializer-legacy-4.7.0.jar;C:\Users\Ney\.m2\repository\net\kyori\adventure-text-serializer-plain\4.7.0\adventure-text-serializer-plain-4.7.0.jar;C:\Users\Ney\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\Ney\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\Ney\.m2\repository\com\googlecode\json-simple\json-simple\1.1.1\json-simple-1.1.1.jar;C:\Users\Ney\.m2\repository\junit\junit\4.10\junit-4.10.jar;C:\Users\Ney\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;C:\Users\Ney\.m2\repository\com\google\guava\guava\21.0\guava-21.0.jar;C:\Users\Ney\.m2\repository\com\google\code\gson\gson\2.8.0\gson-2.8.0.jar;C:\Users\Ney\.m2\repository\net\md-5\bungeecord-chat\1.16-R0.4\bungeecord-chat-1.16-R0.4.jar;C:\Users\Ney\.m2\repository\org\yaml\snakeyaml\1.27\snakeyaml-1.27.jar;C:\Users\Ney\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Ney\.m2\repository\org\ow2\asm\asm\9.0\asm-9.0.jar;C:\Users\Ney\.m2\repository\org\ow2\asm\asm-commons\9.0\asm-commons-9.0.jar;C:\Users\Ney\.m2\repository\org\ow2\asm\asm-tree\9.0\asm-tree-9.0.jar;C:\Users\Ney\.m2\repository\org\ow2\asm\asm-analysis\9.0\asm-analysis-9.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Temp\surefire11932766923308040884\surefirebooter-20250709035619854_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Temp\surefire9521156125272074353\surefirebooter-20250709041605688_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="16.0.2+7"/>
@@ -57,8 +57,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="60.0"/>
   </properties>
-  <testcase name="isListEnabled_returnsTrue" classname="com.ney.anti_skull.config.ConfigManagerTest" time="2.431"/>
-  <testcase name="areMessagesEnabled_returnsTrue" classname="com.ney.anti_skull.config.ConfigManagerTest" time="0.014"/>
+  <testcase name="isListEnabled_returnsTrue" classname="com.ney.anti_skull.config.ConfigManagerTest" time="2.765"/>
+  <testcase name="areMessagesEnabled_returnsTrue" classname="com.ney.anti_skull.config.ConfigManagerTest" time="0.017"/>
   <testcase name="shouldRemoveSkull_returnsFalse" classname="com.ney.anti_skull.config.ConfigManagerTest" time="0.014"/>
-  <testcase name="isSkullBlockingEnabled_returnsTrue" classname="com.ney.anti_skull.config.ConfigManagerTest" time="0.013"/>
+  <testcase name="isSkullBlockingEnabled_returnsTrue" classname="com.ney.anti_skull.config.ConfigManagerTest" time="0.016"/>
 </testsuite>
