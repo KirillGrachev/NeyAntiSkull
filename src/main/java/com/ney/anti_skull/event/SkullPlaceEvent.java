@@ -31,7 +31,7 @@ public class SkullPlaceEvent implements Listener {
     public void onSkullPlace(@NotNull BlockPlaceEvent event) {
 
         Player player = event.getPlayer();
-        ItemStack itemInHand = player.getItemInHand();
+        ItemStack itemInHand = player.getInventory().getItemInMainHand();
 
         if (!configManager.isSkullBlockingEnabled()) {
             event.setCancelled(true);
@@ -44,16 +44,13 @@ public class SkullPlaceEvent implements Listener {
         }
 
         if (!validationService.isSkullPlacementValid(event)) {
-
             event.setCancelled(true);
 
             if (configManager.areMessagesEnabled()) {
                 configManager.getBlockedMessage().forEach(player::sendMessage);
             }
 
-            removalService.removeSkull(itemInHand,
-                    configManager.shouldRemoveSkull());
-
+            removalService.removeSkull(itemInHand, player, configManager.shouldRemoveSkull());
         }
     }
 }
