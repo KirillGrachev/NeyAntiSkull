@@ -75,6 +75,10 @@ public class ConfigManager implements AntiSkullConfig {
         return listEnabled;
     }
 
+    public boolean isCaseSensitive() {
+        return caseSensitive;
+    }
+
     @Override
     public boolean areMessagesEnabled() {
         return messagesEnabled;
@@ -108,10 +112,6 @@ public class ConfigManager implements AntiSkullConfig {
         return config.getStringList(PATH_BLOCKED_MESSAGE).stream()
                 .map(HexColorUtil::color)
                 .collect(Collectors.toList());
-    }
-
-    public boolean isCaseSensitive() {
-        return caseSensitive;
     }
 
     public void reload() {
