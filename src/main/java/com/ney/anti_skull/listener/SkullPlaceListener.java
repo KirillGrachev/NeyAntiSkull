@@ -12,10 +12,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Слушатель событий установки блоков.
- * Перехватывает попытки установки черепов и передаёт их на обработку.
- */
 public class SkullPlaceListener implements Listener {
 
     private final ConfigManager configManager;
@@ -23,28 +19,27 @@ public class SkullPlaceListener implements Listener {
     private final SkullRemovalService skullRemovalService;
 
     public SkullPlaceListener(@NotNull NeyAntiSkull plugin) {
+
         this.configManager = plugin.getConfigManager();
+
+        SkullRegistry skullRegistry = new SkullRegistry(configManager);
+
         this.skullValidationService = new SkullValidationService(
-                new SkullRegistry(plugin.getConfigManager())
+                skullRegistry,
+                configManager
         );
-        this.skullRemovalService =  new SkullRemovalService();
+
+        this.skullRemovalService = new SkullRemovalService();
+
     }
 
-    /**
-     * Обрабатывает событие установки блока.
-     * Создаёт и вызывает обработчик для голов.
-     *
-     * @param event событие установки блока
-     *
-     * Особенности:
-     * - Высший приоритет обработки (HIGHEST)
-     * - Игнорирует отменённые события
-     */
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onSkullPlace(BlockPlaceEvent event) {
+
         new SkullPlaceEvent(configManager,
                 skullValidationService,
                 skullRemovalService
         ).onSkullPlace(event);
+
     }
 }

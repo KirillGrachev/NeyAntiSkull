@@ -2,63 +2,47 @@ package com.ney.anti_skull.registry;
 
 import com.ney.anti_skull.config.ConfigManager;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collection;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Реестр запрещённых игровых голов.
- * Хранит и управляет списком заблокированных названий голов из конфигурации.
- * Обеспечивает проверку принадлежности головы к запрещённым.
- */
 public class SkullRegistry {
 
     private final ConfigManager configManager;
-    private final Set<String> registeredSkulls = new HashSet<>();
+    private final Map<String, Boolean> registeredSkulls = new ConcurrentHashMap<>();
 
     public SkullRegistry(ConfigManager configManager) {
         this.configManager = configManager;
         initializeRegisteredSkulls();
     }
 
-    /**
-     * Инициализирует реестр, загружая запрещённые головы из конфига.
-     */
+    private String normalizeSkullName(String name) {
+        return configManager.isCaseSensitive() ? name : name.toLowerCase();
+    }
+
     private void initializeRegisteredSkulls() {
-        configManager.getDisallowedSkulls().forEach(this::registerSkull);
+        configManager.getDisallowedSkulls().forEach(name ->
+                registeredSkulls.put(normalizeSkullName(name), Boolean.TRUE));
     }
 
-    /**
-     * Регистрирует новое название головы в реестре запрещённых.
-     *
-     * @param skullName название головы для блокировки
-     */
     public void registerSkull(String skullName) {
-        registeredSkulls.add(skullName);
+        registeredSkulls.put(normalizeSkullName(skullName), Boolean.TRUE);
     }
 
-    /**
-     * Проверяет, находится ли голова в списке запрещённых.
-     *
-     * @param skullName отображаемое название головы для проверки
-     * @return true если череп запрещён, false если разрешён или отсутствует
-     */
     public boolean isSkullRegistered(String skullName) {
-        return registeredSkulls.contains(skullName);
+        return registeredSkulls.containsKey(normalizeSkullName(skullName));
     }
 
-    /**
-     * Очищает реестр запрещённых голов.
-     */
     public void clearRegisteredSkulls() {
         registeredSkulls.clear();
     }
 
-    /**
-     * Перезагружает реестр из конфигурации.
-     * Сначала очищает текущий список, затем загружает заново.
-     */
     public void reloadRegistry() {
         clearRegisteredSkulls();
         initializeRegisteredSkulls();
+    }
+
+    public Collection<String> getRegisteredSkulls() {
+        return registeredSkulls.keySet();
     }
 }

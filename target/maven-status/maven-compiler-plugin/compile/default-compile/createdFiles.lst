@@ -1,10 +1,12 @@
 com\ney\anti_skull\event\EventDispatcher.class
+com\ney\anti_skull\service\SkullValidationService.class
+com\ney\anti_skull\config\type\TakeAwayType.class
+com\ney\anti_skull\util\HexColorUtil.class
+com\ney\anti_skull\service\SkullRemovalService$1.class
+com\ney\anti_skull\config\ConfigManager.class
+com\ney\anti_skull\config\AntiSkullConfig.class
 com\ney\anti_skull\service\SkullRemovalService.class
 com\ney\anti_skull\registry\SkullRegistry.class
-com\ney\anti_skull\service\SkullValidationService.class
 com\ney\anti_skull\listener\SkullPlaceListener.class
-com\ney\anti_skull\util\HexColorUtil.class
-com\ney\anti_skull\config\ConfigManager.class
 com\ney\anti_skull\NeyAntiSkull.class
-com\ney\anti_skull\config\AntiSkullConfig.class
 com\ney\anti_skull\event\SkullPlaceEvent.class

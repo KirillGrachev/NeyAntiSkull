@@ -6,7 +6,7 @@
 
     <groupId>com.ney</groupId>
     <artifactId>NeyAntiSkull</artifactId>
-    <version>1.0.2-STABLE</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>NeyAntiSkull</name>
@@ -64,24 +64,6 @@
     </repositories>
 
     <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.13.3</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>5.18.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.27.3</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
             <artifactId>paper-api</artifactId>
