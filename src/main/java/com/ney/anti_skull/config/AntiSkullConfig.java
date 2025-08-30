@@ -14,6 +14,8 @@ public interface AntiSkullConfig {
 
     boolean areMessagesEnabled();
 
+    boolean arePermissionsEnabled();
+
     TakeAwayType getTakeAwayType();
 
     List<String> getDisallowedSkulls();

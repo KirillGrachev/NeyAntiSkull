@@ -8,8 +8,6 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class SkullPlaceEvent implements Listener {
@@ -30,8 +28,12 @@ public class SkullPlaceEvent implements Listener {
     public void onSkullPlace(@NotNull BlockPlaceEvent event) {
 
         Player player = event.getPlayer();
-        ItemStack itemStack = event.getItemInHand();
-        EquipmentSlot hand = event.getHand();
+
+        if (configManager.arePermissionsEnabled()) {
+            if (player.hasPermission("neyantiskull.bypass.place")) {
+                return;
+            }
+        }
 
         if (!validationService.isSkullPlacementValid(event)) {
 
@@ -41,12 +43,16 @@ public class SkullPlaceEvent implements Listener {
                 configManager.getBlockedMessage().forEach(player::sendMessage);
             }
 
+            boolean shouldRemove = configManager.shouldRemoveSkull();
+            if (configManager.arePermissionsEnabled()) {
+                shouldRemove = shouldRemove && !player.hasPermission("neyantiskull.bypass.takeaway");
+            }
+
             removalService.removeSkull(
-                    itemStack, player, hand,
-                    configManager.shouldRemoveSkull(),
+                    event.getItemInHand(), player,
+                    event.getHand(), shouldRemove,
                     configManager.getTakeAwayType()
             );
-
         }
     }
 }
