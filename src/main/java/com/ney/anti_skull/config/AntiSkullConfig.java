@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface AntiSkullConfig {
 
-    boolean isSkullBlockingEnabled();
-
     boolean shouldRemoveSkull();
+
+    boolean isSkullBlockingEnabled();
 
     boolean isListEnabled();
 
