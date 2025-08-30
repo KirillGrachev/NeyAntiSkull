@@ -12,10 +12,6 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Обработчик события установки голов.
- * Отвечает за блокировку запрещённых голов.
- */
 public class SkullPlaceEvent implements Listener {
 
     private final ConfigManager configManager;
@@ -30,19 +26,6 @@ public class SkullPlaceEvent implements Listener {
         this.removalService = removalService;
     }
 
-    /**
-     * Обрабатывает попытку установки блока.
-     *
-     * @param event событие установки блока
-     *
-     * Логика работы:
-     * 1. Проверяет глобальную активность системы
-     * 2. Валидирует голову через SkullValidationService
-     * 3. При необходимости:
-     *    - Отменяет событие
-     *    - Показывает сообщение
-     *    - Удаляет голову через SkullRemovalService
-     */
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onSkullPlace(@NotNull BlockPlaceEvent event) {
 
@@ -50,11 +33,7 @@ public class SkullPlaceEvent implements Listener {
         ItemStack itemStack = event.getItemInHand();
         EquipmentSlot hand = event.getHand();
 
-        if (!configManager.isSkullBlockingEnabled()) {
-            return;
-        }
-
-        if (!validationService.isSkullPlacementValid(event, configManager)) {
+        if (!validationService.isSkullPlacementValid(event)) {
 
             event.setCancelled(true);
 
