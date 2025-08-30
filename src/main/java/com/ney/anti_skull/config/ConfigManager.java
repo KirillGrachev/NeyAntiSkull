@@ -23,12 +23,14 @@ public class ConfigManager implements AntiSkullConfig {
     private static final String PATH_DISALLOWED_SKULLS = "settings.list.names";
     private static final String PATH_BLOCKED_MESSAGE = "messages.on_place.text";
     private static final String PATH_CASE_SENSITIVE = "settings.list.case_sensitive";
+    private static final String PATH_PERMISSIONS_ENABLED = "settings.permissions.enabled";
 
     private boolean skullBlockingEnabled;
     private boolean listEnabled;
     private boolean takeAwayEnabled;
     private boolean messagesEnabled;
     private boolean caseSensitive;
+    private boolean permissionsEnabled;
 
     public ConfigManager(NeyAntiSkull plugin) {
 
@@ -55,6 +57,7 @@ public class ConfigManager implements AntiSkullConfig {
         takeAwayEnabled = config.getBoolean(PATH_TAKE_AWAY_ENABLED, false);
         messagesEnabled = config.getBoolean(PATH_MESSAGES_ENABLED, true);
         caseSensitive = config.getBoolean(PATH_CASE_SENSITIVE, false);
+        permissionsEnabled = config.getBoolean(PATH_PERMISSIONS_ENABLED, true);
     }
 
     @Override
@@ -75,6 +78,11 @@ public class ConfigManager implements AntiSkullConfig {
     @Override
     public boolean areMessagesEnabled() {
         return messagesEnabled;
+    }
+
+    @Override
+    public boolean arePermissionsEnabled() {
+        return permissionsEnabled;
     }
 
     @Override
