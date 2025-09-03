@@ -27,6 +27,7 @@
 <img width="768" height="432" alt="image" src="https://github.com/user-attachments/assets/fc833765-a9f5-4108-987b-f1e68c09dcd7" />
 
 **FAQ**
+
 **Q: Is it compatible with Paper 1.20?**
 A: Yes, it has been tested on Paper 1.13-1.21.
 
