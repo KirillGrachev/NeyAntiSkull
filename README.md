@@ -20,10 +20,10 @@
 5. Configure the settings (see below).
 6. Restart the server.
 
-Configuration (config.yml)
+**Configuration (config.yml)**
 <img width="775" height="725" alt="image" src="https://github.com/user-attachments/assets/f3cdcc37-1d28-4fa9-8121-831423475902" />
 
-Usage example:
+**Usage example:**
 <img width="768" height="432" alt="image" src="https://github.com/user-attachments/assets/ea99b952-ca04-4c30-b5ab-3692c0ce6c04" />
 
 **FAQ**
