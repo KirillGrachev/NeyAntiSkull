@@ -30,7 +30,7 @@ public class SkullPlaceEvent implements Listener {
         Player player = event.getPlayer();
 
         if (configManager.arePermissionsEnabled()) {
-            if (player.hasPermission("neyantiskull.bypass.place")) {
+            if (player.hasPermission(configManager.getPermissionPlace())) {
                 return;
             }
         }
@@ -45,7 +45,8 @@ public class SkullPlaceEvent implements Listener {
 
             boolean shouldRemove = configManager.shouldRemoveSkull();
             if (configManager.arePermissionsEnabled()) {
-                shouldRemove = shouldRemove && !player.hasPermission("neyantiskull.bypass.takeaway");
+                shouldRemove = shouldRemove &&
+                        !player.hasPermission(configManager.getPermissionTakeAway());
             }
 
             removalService.removeSkull(

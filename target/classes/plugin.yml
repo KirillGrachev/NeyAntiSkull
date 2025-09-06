@@ -1,4 +1,4 @@
 name: NeyAntiSkull
-version: '1.0.3'
+version: '1.0.3-FIX'
 main: com.ney.anti_skull.NeyAntiSkull
 api-version: 1.13
