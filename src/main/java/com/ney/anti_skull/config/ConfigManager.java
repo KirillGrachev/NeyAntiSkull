@@ -24,6 +24,8 @@ public class ConfigManager implements AntiSkullConfig {
     private static final String PATH_BLOCKED_MESSAGE = "messages.on_place.text";
     private static final String PATH_CASE_SENSITIVE = "settings.list.case_sensitive";
     private static final String PATH_PERMISSIONS_ENABLED = "settings.permissions.enabled";
+    private static final String PATH_PERMISSION_PLACE = "settings.permissions.place";
+    private static final String PATH_PERMISSION_TAKE_AWAY = "settings.permissions.take_away";
 
     private boolean skullBlockingEnabled;
     private boolean listEnabled;
@@ -31,6 +33,9 @@ public class ConfigManager implements AntiSkullConfig {
     private boolean messagesEnabled;
     private boolean caseSensitive;
     private boolean permissionsEnabled;
+
+    private String permissionPlace;
+    private String permissionTakeAway;
 
     public ConfigManager(NeyAntiSkull plugin) {
 
@@ -58,6 +63,8 @@ public class ConfigManager implements AntiSkullConfig {
         messagesEnabled = config.getBoolean(PATH_MESSAGES_ENABLED, true);
         caseSensitive = config.getBoolean(PATH_CASE_SENSITIVE, false);
         permissionsEnabled = config.getBoolean(PATH_PERMISSIONS_ENABLED, true);
+        permissionPlace = config.getString(PATH_PERMISSION_PLACE, "antiskull.place");
+        permissionTakeAway = config.getString(PATH_PERMISSION_TAKE_AWAY, "antiskull.takeaway");
     }
 
     @Override
@@ -87,6 +94,16 @@ public class ConfigManager implements AntiSkullConfig {
     @Override
     public boolean arePermissionsEnabled() {
         return permissionsEnabled;
+    }
+
+    @Override
+    public String getPermissionPlace() {
+        return permissionPlace;
+    }
+
+    @Override
+    public String getPermissionTakeAway() {
+        return permissionTakeAway;
     }
 
     @Override

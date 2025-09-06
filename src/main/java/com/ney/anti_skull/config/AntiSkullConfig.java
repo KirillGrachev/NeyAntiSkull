@@ -22,4 +22,7 @@ public interface AntiSkullConfig {
 
     List<String> getBlockedMessage();
 
+    String getPermissionPlace();
+    String getPermissionTakeAway();
+
 }

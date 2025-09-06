@@ -12,6 +12,8 @@ settings:
   enabled: true # Block head placement
   permissions:
     enabled: false # Enable permission system (bypass.place, bypass.takeaway)
+    place: "antiskull.bypass.place"
+    take_away: "antiskull.bypass.takeaway"
   take_away:
     enabled: true # Take away the head(s) the player attempted to place, if blocking is active
     type: HAND # HAND — remove only the head from the hand used to place it.

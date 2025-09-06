@@ -5,29 +5,31 @@
 #|_| \_|\___|\__, /_/   \_\_| |_|\__|_|____/|_|\_\\__,_|_|_|
 #            |___/
 
-# Разработчик - https://t.me/NeyOff
-# Специально для spigotmc.ru
+# Developer - https://t.me/NeyOff
+# Especially for spigotmc
 
 settings:
-  enabled: true # Блокировать установку головы
+  enabled: true # Block head placement
   permissions:
-    enabled: false # Включить систему разрешений (bypass.place, bypass.takeaway)
+    enabled: false # Enable permission system (bypass.place, bypass.takeaway)
+    place: "antiskull.bypass.place"
+    take_away: "antiskull.bypass.takeaway"
   take_away:
-    enabled: true # Отбирать голов(ы), которую игрок пытался поставить, если блокировка активирована
-    type: HAND # HAND — удалять только голову из той руки, которой игрок пытался поставить голову.
-    # ALL — удалять все головы из инвентаря игрока.
+    enabled: true # Take away the head(s) the player attempted to place, if blocking is active
+    type: HAND # HAND — remove only the head from the hand used to place it.
+    # ALL — remove all heads from the player's inventory.
 
-  list: # Список названий голов, установка которых не разрешена (Поддерживается HEX)
-    enabled: true # Если false - будут блокироваться все головы (в независимости от названия)
+  list: # List of head names that are not allowed to be placed (HEX colors supported)
+    enabled: true # If false - all heads will be blocked (regardless of name)
     names:
-      - "&aГолова игрока"
-      - "Голова игрока"
-      - "#42fffcГолова игрока"
+      - "&aPlayer Head"
+      - "Player Head"
+      - "#42fffcPlayer Head"
 
 messages:
   on_place:
     enabled: true
     text:
       - ""
-      - " #efff5e[⚠] #ecff45Внимание! Установка данного игрового предмета запрещена. "
+      - " #efff5e[⚠] #ecff45Attention! Placement of this item is prohibited. "
       - ""
