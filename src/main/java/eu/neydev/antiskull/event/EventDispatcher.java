@@ -1,6 +1,6 @@
-package com.ney.anti_skull.event;
+package eu.neydev.antiskull.event;
 
-import com.ney.anti_skull.NeyAntiSkull;
+import eu.neydev.antiskull.NeyAntiSkull;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;

@@ -1,4 +1,4 @@
-package com.ney.anti_skull.config.type;
+package eu.neydev.antiskull.config.type;
 
 public enum TakeAwayType {
     HAND,

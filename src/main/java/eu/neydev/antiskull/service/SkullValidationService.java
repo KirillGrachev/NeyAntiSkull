@@ -1,7 +1,7 @@
-package com.ney.anti_skull.service;
+package eu.neydev.antiskull.service;
 
-import com.ney.anti_skull.config.ConfigManager;
-import com.ney.anti_skull.registry.SkullRegistry;
+import eu.neydev.antiskull.config.ConfigManager;
+import eu.neydev.antiskull.registry.SkullRegistry;
 import org.bukkit.Material;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Skull;

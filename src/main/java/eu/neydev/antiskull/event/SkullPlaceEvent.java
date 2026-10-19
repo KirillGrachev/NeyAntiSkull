@@ -1,8 +1,8 @@
-package com.ney.anti_skull.event;
+package eu.neydev.antiskull.event;
 
-import com.ney.anti_skull.config.ConfigManager;
-import com.ney.anti_skull.service.SkullRemovalService;
-import com.ney.anti_skull.service.SkullValidationService;
+import eu.neydev.antiskull.config.ConfigManager;
+import eu.neydev.antiskull.service.SkullRemovalService;
+import eu.neydev.antiskull.service.SkullValidationService;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;

@@ -1,6 +1,6 @@
-package com.ney.anti_skull.service;
+package eu.neydev.antiskull.service;
 
-import com.ney.anti_skull.config.type.TakeAwayType;
+import eu.neydev.antiskull.config.type.TakeAwayType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.EquipmentSlot;
 

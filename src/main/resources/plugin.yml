@@ -1,4 +1,7 @@
 name: NeyAntiSkull
 version: '${project.version}'
-main: com.ney.anti_skull.NeyAntiSkull
-api-version: 1.13
+main: eu.neydev.antiskull.NeyAntiSkull
+api-version: '1.20'
+author: Ney
+description: Blocks placing player heads with the configured display names
+website: https://t.me/NeyOff

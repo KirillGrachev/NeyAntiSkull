@@ -1,8 +1,8 @@
-package com.ney.anti_skull;
+package eu.neydev.antiskull;
 
-import com.ney.anti_skull.config.ConfigManager;
-import com.ney.anti_skull.event.EventDispatcher;
-import com.ney.anti_skull.listener.SkullPlaceListener;
+import eu.neydev.antiskull.config.ConfigManager;
+import eu.neydev.antiskull.event.EventDispatcher;
+import eu.neydev.antiskull.listener.SkullPlaceListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class NeyAntiSkull extends JavaPlugin {
@@ -19,13 +19,13 @@ public final class NeyAntiSkull extends JavaPlugin {
                 new SkullPlaceListener(this)
         );
 
-        getLogger().info("NeyAntiSkull успешно запущен!");
+        getLogger().info("NeyAntiSkull started successfully.");
 
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("NeyAntiSkull остановлен!");
+        getLogger().info("NeyAntiSkull stopped.");
     }
 
     public ConfigManager getConfigManager() {

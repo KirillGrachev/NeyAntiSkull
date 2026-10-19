@@ -1,6 +1,6 @@
-package com.ney.anti_skull.config;
+package eu.neydev.antiskull.config;
 
-import com.ney.anti_skull.config.type.TakeAwayType;
+import eu.neydev.antiskull.config.type.TakeAwayType;
 
 import java.util.List;
 

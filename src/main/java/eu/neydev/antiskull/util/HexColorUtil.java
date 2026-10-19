@@ -1,4 +1,4 @@
-package com.ney.anti_skull.util;
+package eu.neydev.antiskull.util;
 
 import org.bukkit.ChatColor;
 import org.jetbrains.annotations.NotNull;

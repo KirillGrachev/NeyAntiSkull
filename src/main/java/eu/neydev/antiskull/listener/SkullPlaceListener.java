@@ -1,11 +1,11 @@
-package com.ney.anti_skull.listener;
+package eu.neydev.antiskull.listener;
 
-import com.ney.anti_skull.NeyAntiSkull;
-import com.ney.anti_skull.config.ConfigManager;
-import com.ney.anti_skull.event.SkullPlaceEvent;
-import com.ney.anti_skull.registry.SkullRegistry;
-import com.ney.anti_skull.service.SkullRemovalService;
-import com.ney.anti_skull.service.SkullValidationService;
+import eu.neydev.antiskull.NeyAntiSkull;
+import eu.neydev.antiskull.config.ConfigManager;
+import eu.neydev.antiskull.event.SkullPlaceEvent;
+import eu.neydev.antiskull.registry.SkullRegistry;
+import eu.neydev.antiskull.service.SkullRemovalService;
+import eu.neydev.antiskull.service.SkullValidationService;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;

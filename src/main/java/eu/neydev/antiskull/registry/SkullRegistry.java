@@ -1,6 +1,6 @@
-package com.ney.anti_skull.registry;
+package eu.neydev.antiskull.registry;
 
-import com.ney.anti_skull.config.ConfigManager;
+import eu.neydev.antiskull.config.ConfigManager;
 
 import java.util.Collection;
 import java.util.Map;

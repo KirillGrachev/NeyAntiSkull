@@ -1,8 +1,8 @@
-package com.ney.anti_skull.config;
+package eu.neydev.antiskull.config;
 
-import com.ney.anti_skull.NeyAntiSkull;
-import com.ney.anti_skull.config.type.TakeAwayType;
-import com.ney.anti_skull.util.HexColorUtil;
+import eu.neydev.antiskull.NeyAntiSkull;
+import eu.neydev.antiskull.config.type.TakeAwayType;
+import eu.neydev.antiskull.util.HexColorUtil;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
