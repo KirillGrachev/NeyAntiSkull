@@ -1,22 +1,32 @@
 package eu.neydev.antiskull.event;
 
-import eu.neydev.antiskull.NeyAntiSkull;
-
-import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
+import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Диспетчер регистрации слушателей событий.
+ *
+ * Зависит от {@link Plugin}, а не от конкретного класса плагина: регистрация
+ * проверяется на моке сервера без загрузки всего плагина.
+ */
 public class EventDispatcher {
 
-    private final NeyAntiSkull plugin;
+    private final Plugin plugin;
 
-    public EventDispatcher(NeyAntiSkull plugin) {
+    public EventDispatcher(@NotNull Plugin plugin) {
         this.plugin = plugin;
     }
 
+    /**
+     * Регистрирует переданные слушатели в Bukkit.
+     *
+     * @param listeners слушатели событий
+     */
     public void registerEvents(Listener @NotNull ... listeners) {
         for (Listener listener : listeners) {
-            Bukkit.getPluginManager().registerEvents(listener, plugin);
+            plugin.getServer().getPluginManager().registerEvents(listener, plugin);
         }
     }
+
 }
