@@ -5,3 +5,27 @@ api-version: '1.20'
 author: Ney
 description: Blocks placing player heads with the configured display names
 website: https://t.me/NeyOff
+
+commands:
+  antiskull:
+    description: NeyAntiSkull control command
+    usage: /antiskull <reload|info>
+    aliases: [nas, neyantiskull]
+
+permissions:
+  antiskull.bypass.place:
+    description: Place the blocked player heads anyway
+    default: false
+  antiskull.bypass.takeaway:
+    description: Keep the item when a blocked head placement is cancelled
+    default: false
+  antiskull.reload:
+    description: Reload the configuration and read the current rules
+    default: op
+  antiskull.admin:
+    description: All NeyAntiSkull permissions
+    default: op
+    children:
+      antiskull.bypass.place: true
+      antiskull.bypass.takeaway: true
+      antiskull.reload: true

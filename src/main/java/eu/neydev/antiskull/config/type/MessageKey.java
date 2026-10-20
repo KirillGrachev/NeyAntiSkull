@@ -13,6 +13,10 @@ import org.jetbrains.annotations.Nullable;
  */
 public enum MessageKey {
 
+    STATE_ON("state_on", null, true, "&aenabled"),
+
+    STATE_OFF("state_off", null, true, "&cdisabled"),
+
     BLOCKED("blocked", "on_place", true,
             "\n #efff5e[⚠] #ecff45Attention! Placement of this item is prohibited. \n"),
 

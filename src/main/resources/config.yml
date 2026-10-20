@@ -2,6 +2,18 @@
 #
 # PLACEHOLDERS - work in every text of this file:
 #
+#   List
+#     {names}             number of names in the blocked list
+#
+#   Service (info, reload)
+#     {version}           plugin version from plugin.yml
+#     {time}              reload time, ms
+#     {blocking}          settings.enabled as a state_on / state_off word
+#     {list}              settings.list.enabled as a state word
+#     {case_sensitive}    settings.list.case_sensitive as a state word
+#     {take_away}         settings.take_away.enabled as a state word
+#     {take_away_type}    settings.take_away.type (HAND or ALL)
+#     {permissions}       permissions.enabled as a state word
 #     {prefix}            messages.prefix
 #
 # HEX colors are supported everywhere: #RRGGBB and &#RRGGBB.
@@ -41,6 +53,16 @@ messages:
   enabled: true # Master switch for all plugin messages
   prefix: "" # Substituted into {prefix} inside the texts (empty = no prefix)
 
+  # Word-fragments for the state placeholders inside info (not standalone
+  # messages): /antiskull info assembles lines like "Blocking: <state_on|state_off>"
+  state_on:
+    enabled: true
+    text: "&aenabled"
+
+  state_off:
+    enabled: true
+    text: "&cdisabled"
+
   # Sent to the player whose head placement was blocked
   blocked:
     enabled: true
@@ -48,3 +70,28 @@ messages:
       - ""
       - " #efff5e[⚠] #ecff45Attention! Placement of this item is prohibited. "
       - ""
+
+  no_permission:
+    enabled: true
+    text: "{prefix}&#ff6b6bYou do not have permission to do this."
+
+  usage:
+    enabled: true
+    text:
+      - "{prefix}&#8ce0ffNeyAntiSkull commands:"
+      - "&f/antiskull reload &8- &7reload the configuration"
+      - "&f/antiskull info &8- &7current blocking rules and the list size"
+
+  reload:
+    enabled: true
+    text: "{prefix}&#9dff8cConfiguration reloaded &7({time} ms, {names} names in the list)."
+
+  info:
+    enabled: true
+    text:
+      - "{prefix}&7Version: &f{version}"
+      - "&7Blocking: &f{blocking}"
+      - "&7Name list: &f{list} &8({names} names)"
+      - "&7Case sensitive: &f{case_sensitive}"
+      - "&7Take away: &f{take_away} &8({take_away_type})"
+      - "&7Permissions: &f{permissions}"
