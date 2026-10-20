@@ -1,33 +1,48 @@
-# _   _               _          _   _ ____  _          _ _
-#| \ | | ___ _   _   / \   _ __ | |_(_) ___|| | ___   _| | |
-#|  \| |/ _ \ | | | / _ \ | '_ \| __| \___ \| |/ / | | | | |
-#| |\  |  __/ |_| |/ ___ \| | | | |_| |___) |   <| |_| | | |
-#|_| \_|\___|\__, /_/   \_\_| |_|\__|_|____/|_|\_\\__,_|_|_|
-#            |___/
-
-# Developer - https://t.me/NeyOff
-# Especially for spigotmc
+# NeyAntiSkull - blocks placing player heads with the configured display names.
+#
+# PLACEHOLDERS - work in every text of this file:
+#
+#     {prefix}            messages.prefix
+#
+# HEX colors are supported everywhere: #RRGGBB and &#RRGGBB.
 
 settings:
-  enabled: true # Block head placement
-  permissions:
-    enabled: false # Enable permission system (bypass.place, bypass.takeaway)
-    place: "antiskull.bypass.place"
-    take_away: "antiskull.bypass.takeaway"
-  take_away:
-    enabled: true # Take away the head(s) the player attempted to place, if blocking is active
-    type: HAND # HAND — remove only the head from the hand used to place it.
-    # ALL — remove all heads from the player's inventory.
 
-  list: # List of head names that are not allowed to be placed (HEX colors supported)
-    enabled: true # If false - all heads will be blocked (regardless of name)
+  enabled: true # Master switch. If false - placement is never blocked
+
+  list:
+    enabled: true # If false - EVERY player head is blocked, names are not looked at
+    case_sensitive: false # Compare display names with their exact case
+    # Display names that cannot be placed. Colors are part of the name, so
+    # "&aPlayer Head", "#42fffcPlayer Head" and plain "Player Head" are three
+    # different entries - list every variant you want to block.
     names:
       - "&aPlayer Head"
       - "Player Head"
       - "#42fffcPlayer Head"
 
+  take_away:
+    enabled: true # Take the head away when its placement is blocked
+    # HAND - only the stack from the hand that placed it
+    # ALL  - every matching head in the inventory
+    type: HAND
+
+permissions:
+
+  enabled: false # Enable the permission system: both bypass nodes below become active
+
+  # Place the blocked heads anyway
+  place: "antiskull.bypass.place"
+  # Keep the item when a blocked placement is cancelled
+  take_away: "antiskull.bypass.takeaway"
+
 messages:
-  on_place:
+
+  enabled: true # Master switch for all plugin messages
+  prefix: "" # Substituted into {prefix} inside the texts (empty = no prefix)
+
+  # Sent to the player whose head placement was blocked
+  blocked:
     enabled: true
     text:
       - ""
